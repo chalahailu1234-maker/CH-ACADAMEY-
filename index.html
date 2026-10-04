@@ -1,15 +1,6 @@
-  <!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>CH Goal Academy</title>
-
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1565c0">
-
-  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>CH Goal Academy</title>  <!-- PWA Manifest -->  <link rel="manifest" href="./manifest.json">  <!-- Theme Color -->  <meta name="theme-color" content="#1565c0">  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -58,7 +49,7 @@
       border-radius: 18px;
       padding: 18px;
       margin-bottom: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
 
     .card h2,
@@ -77,15 +68,7 @@
     }
 
     button {
-      border: none;<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js")
-        .then(() => console.log("Service Worker registered"))
-        .catch((error) => console.error("Service Worker error:", error));
-    });
-  }
-</script>
+      border: none;
       border-radius: 10px;
       padding: 11px 15px;
       background: #1565c0;
@@ -263,366 +246,414 @@
       font-size: 13px;
       opacity: 0.8;
     }
-  </style>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header>
+  </style></head><body>  <!-- HEADER -->  <header>
     <h1>🎓 CH Goal Academy</h1>
     <p>Learn • Code • Grow 🚀</p>
-  </header>
+  </header>  <main class="container"><!-- HOME -->
+<section id="home" class="page active">
 
-  <main class="container">
+  <div class="card center">
+    <div class="big-title">Welcome 👋</div>
+    <p>Learn today, succeed tomorrow.</p>
+    <br>
+    <span class="badge">Software Engineering Goal 💻</span>
+  </div>
 
-    <!-- HOME -->
-    <section id="home" class="page active">
+  <div class="card">
+    <h2>📊 My Progress</h2>
+    <p id="progressText">0% completed</p>
 
-      <div class="card center">
-        <div class="big-title">Welcome 👋</div>
-        <p>Learn today, succeed tomorrow.</p>
-        <br>
-        <span class="badge">Software Engineering Goal 💻</span>
-      </div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
 
-      <div class="card">
-        <h2>📊 My Progress</h2>
-        <p id="progressText">0% completed</p>
+  <div class="card">
+    <h2>🎯 Daily Goals</h2>
 
-        <div class="progress">
-          <div class="progress-bar" id="progressBar"></div>
-        </div>
-      </div>
+    <div class="subject">
+      <span>📚 Study</span>
+      <button onclick="completeGoal(1)">Done</button>
+    </div>
 
-      <div class="card">
-        <h2>🎯 Daily Goals</h2>
+    <div class="subject">
+      <span>💻 Coding</span>
+      <button onclick="completeGoal(2)">Done</button>
+    </div>
 
-        <div class="subject">
-          <span>📚 Study</span>
-          <button onclick="completeGoal(1)">Done</button>
-        </div>
+    <div class="subject">
+      <span>🧠 Practice</span>
+      <button onclick="completeGoal(3)">Done</button>
+    </div>
+  </div>
 
-        <div class="subject">
-          <span>💻 Coding</span>
-          <button onclick="completeGoal(2)">Done</button>
-        </div>
+  <div class="card">
+    <h2>🔥 Motivation</h2>
+    <p>
+      Your goal is possible. Keep learning, keep practicing,
+      and never give up.
+    </p>
+  </div>
 
-        <div class="subject">
-          <span>🧠 Practice</span>
-          <button onclick="completeGoal(3)">Done</button>
-        </div>
-      </div>
+</section>
 
-      <div class="card">
-        <h2>🔥 Motivation</h2>
-        <p>
-          Your goal is possible. Keep learning, keep practicing,
-          and never give up.
-        </p>
-      </div>
+<!-- LEARN -->
+<section id="learn" class="page">
 
-    </section>
+  <div class="card">
+    <h2>📚 Learn</h2>
+    <p>Choose a lesson below.</p>
+  </div>
 
-    <!-- LEARN -->
-    <section id="learn" class="page">
+  <div class="card">
+    <h3>🐍 Python</h3>
+    <p>Start programming from zero.</p>
+    <button onclick="showPage('python')">Start Python</button>
+  </div>
 
-      <div class="card">
-        <h2>📚 Learn</h2>
-        <p>Choose a lesson below.</p>
-      </div>
+  <div class="card">
+    <h3>🌐 HTML</h3>
+    <p>Learn how websites are created.</p>
+    <button onclick="showPage('htmlLesson')">Start HTML</button>
+  </div>
 
-      <div class="card">
-        <h3>🐍 Python</h3>
-        <p>Start programming from zero.</p>
-        <button onclick="showPage('python')">Start Python</button>
-      </div>
+  <div class="card">
+    <h3>🎨 CSS</h3>
+    <p>Learn how to design websites.</p>
+    <button onclick="showPage('cssLesson')">Start CSS</button>
+  </div>
 
-      <div class="card">
-        <h3>🌐 HTML</h3>
-        <p>Learn how websites are created.</p>
-        <button onclick="showPage('htmlLesson')">Start HTML</button>
-      </div>
+</section>
 
-      <div class="card">
-        <h3>🎨 CSS</h3>
-        <p>Learn how to design websites.</p>
-        <button onclick="showPage('cssLesson')">Start CSS</button>
-      </div>
+<!-- PYTHON -->
+<section id="python" class="page">
 
-    </section>
+  <div class="card lesson">
 
-    <!-- PYTHON -->
-    <section id="python" class="page">
+    <h2>🐍 Python — Lesson 1</h2>
 
-      <div class="card lesson">
-        <h2>🐍 Python — Lesson 1</h2>
+    <p>
+      Python is a programming language used to create applications,
+      websites, automation tools, AI systems and more.
+    </p>
 
-        <p>
-          Python is a programming language used to create applications,
-          websites, automation tools, AI systems and more.
-        </p>
+    <h3>1. Print</h3>
 
-        <h3>1. Print</h3>
+    <p>
+      The <b>print()</b> function displays information on the screen.
+    </p>
 
-        <p>The <b>print()</b> function displays information on the screen.</p>
+    <code>print("Hello World")</code>
 
-        <code>print("Hello World")</code>
+    <p>Example:</p>
 
-        <p>Example:</p>
+    <code>print("My name is Caalaa")</code>
 
-        <code>print("My name is Caalaa")</code>
+    <button class="success" onclick="completeLesson('python1')">
+      ✅ Complete Lesson
+    </button>
 
-        <button class="success" onclick="completeLesson('python1')">
-          ✅ Complete Lesson
-        </button>
-      </div>
+  </div>
 
-    </section>
+</section>
 
-    <!-- HTML LESSON -->
-    <section id="htmlLesson" class="page">
+<!-- HTML LESSON -->
+<section id="htmlLesson" class="page">
 
-      <div class="card lesson">
-        <h2>🌐 HTML — Lesson 1</h2>
+  <div class="card lesson">
 
-        <p>
-          HTML means <b>HyperText Markup Language</b>.
-          It is used to structure web pages.
-        </p>
+    <h2>🌐 HTML — Lesson 1</h2>
 
-        <h3>Heading</h3>
+    <p>
+      HTML means <b>HyperText Markup Language</b>.
+      It is used to structure web pages.
+    </p>
 
-        <code>&lt;h1&gt;Hello CH Academy&lt;/h1&gt;</code>
+    <h3>Heading</h3>
 
-        <h3>Paragraph</h3>
+    <code>&lt;h1&gt;Hello CH Academy&lt;/h1&gt;</code>
 
-        <code>&lt;p&gt;Welcome to my website.&lt;/p&gt;</code>
+    <h3>Paragraph</h3>
 
-        <button class="success" onclick="completeLesson('html1')">
-          ✅ Complete Lesson
-        </button>
-      </div>
+    <code>&lt;p&gt;Welcome to my website.&lt;/p&gt;</code>
 
-    </section>
+    <button class="success" onclick="completeLesson('html1')">
+      ✅ Complete Lesson
+    </button>
 
-    <!-- CSS LESSON -->
-    <section id="cssLesson" class="page">
+  </div>
 
-      <div class="card lesson">
-        <h2>🎨 CSS — Lesson 1</h2>
+</section>
 
-        <p>
-          CSS means <b>Cascading Style Sheets</b>.
-          It makes websites beautiful.
-        </p>
+<!-- CSS LESSON -->
+<section id="cssLesson" class="page">
 
-        <code>
+  <div class="card lesson">
+
+    <h2>🎨 CSS — Lesson 1</h2>
+
+    <p>
+      CSS means <b>Cascading Style Sheets</b>.
+      It makes websites beautiful.
+    </p>
+
+    <code>
+
 body {
-  background: blue;
-  color: white;
+background: blue;
+color: white;
 }
-        </code>
+</code>
 
-        <button class="success" onclick="completeLesson('css1')">
-          ✅ Complete Lesson
-        </button>
-      </div>
-
-    </section>
-
-    <!-- QUIZ -->
-    <section id="quiz" class="page">
-
-      <div class="card">
-        <h2>📝 Quick Quiz</h2>
-
-        <div class="quiz-question">
-          <p><b>1. What does HTML mean?</b></p>
-
-          <label>
-            <input type="radio" name="q1" value="a">
-            HyperText Markup Language
-          </label>
-
-          <label>
-            <input type="radio" name="q1" value="b">
-            HighText Machine Language
-          </label>
-
-          <label>
-            <input type="radio" name="q1" value="c">
-            Home Tool Markup Language
-          </label>
-        </div>
-
-        <div class="quiz-question">
-          <p><b>2. Which language is used for programming?</b></p>
-
-          <label>
-            <input type="radio" name="q2" value="a">
-            Python
-          </label>
-
-          <label>
-            <input type="radio" name="q2" value="b">
-            HTML
-          </label>
-
-          <label>
-            <input type="radio" name="q2" value="c">
-            CSS
-          </label>
-        </div>
-
-        <button onclick="checkQuiz()">Submit Quiz</button>
-
-        <h3 id="quizResult"></h3>
-      </div>
-
-    </section>
-
-    <!-- GOALS -->
-    <section id="goals" class="page">
-
-      <div class="card">
-        <h2>🎯 My Goals</h2>
-
-        <div class="achievement">
-          💻 Become a Software Engineer
-        </div>
-
-        <div class="achievement">
-          🐍 Learn Python
-        </div>
-
-        <div class="achievement">
-          🌐 Build Websites
-        </div>
-
-        <div class="achievement">
-          🚀 Create Useful Applications
-        </div>
-      </div>
-
-    </section>
-
-    <!-- TIMER -->
-    <section id="timer" class="page">
-
-      <div class="card center">
-        <h2>⏱️ Study Timer</h2>
-
-        <div class="timer" id="timerDisplay">
-          25:00
-        </div>
-
-        <button onclick="startTimer()">▶ Start</button>
-        <button class="secondary" onclick="pauseTimer()">⏸ Pause</button>
-        <button class="danger" onclick="resetTimer()">↻ Reset</button>
-      </div>
-
-    </section>
-
-    <!-- PROFILE -->
-    <section id="profile" class="page">
-
-      <div class="card">
-        <h2>👤 Profile</h2>
-
-        <input
-          type="text"
-          id="profileName"
-          placeholder="Enter your name"
-        >
-
-        <button onclick="saveName()">Save Name</button>
-
-        <h3 id="welcomeName"></h3>
-      </div>
-
-      <div class="card">
-        <h3>🏆 My Achievement</h3>
-
-        <div class="achievement">
-          🌟 Future Software Engineer
-        </div>
-      </div>
-
-    </section>
-
-    <!-- SETTINGS -->
-    <section id="settings" class="page">
-
-      <div class="card">
-        <h2>⚙️ Settings</h2>
-
-        <button onclick="toggleTheme()">
-          🌙 / ☀️ Dark & Light
-        </button>
-
-        <button class="danger" onclick="resetProgress()">
-          🗑️ Reset Progress
-        </button>
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- BOTTOM NAVIGATION -->
-  <nav class="bottom-nav">
-
-    <button class="nav-btn active" onclick="showPage('home')">
-      <span class="icon">🏠</span>
-      Home
+    <button class="success" onclick="completeLesson('css1')">
+      ✅ Complete Lesson
     </button>
 
-    <button class="nav-btn" onclick="showPage('learn')">
-      <span class="icon">📚</span>
-      Learn
+  </div>
+
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="page">
+
+  <div class="card">
+
+    <h2>📝 Quick Quiz</h2>
+
+    <div class="quiz-question">
+
+      <p>
+        <b>1. What does HTML mean?</b>
+      </p>
+
+      <label>
+        <input type="radio" name="q1" value="a">
+        HyperText Markup Language
+      </label>
+
+      <label>
+        <input type="radio" name="q1" value="b">
+        HighText Machine Language
+      </label>
+
+      <label>
+        <input type="radio" name="q1" value="c">
+        Home Tool Markup Language
+      </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+      <p>
+        <b>2. Which language is used for programming?</b>
+      </p>
+
+      <label>
+        <input type="radio" name="q2" value="a">
+        Python
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="b">
+        HTML
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="c">
+        CSS
+      </label>
+
+    </div>
+
+    <button onclick="checkQuiz()">Submit Quiz</button>
+
+    <h3 id="quizResult"></h3>
+
+  </div>
+
+</section>
+
+<!-- GOALS -->
+<section id="goals" class="page">
+
+  <div class="card">
+
+    <h2>🎯 My Goals</h2>
+
+    <div class="achievement">
+      💻 Become a Software Engineer
+    </div>
+
+    <div class="achievement">
+      🐍 Learn Python
+    </div>
+
+    <div class="achievement">
+      🌐 Build Websites
+    </div>
+
+    <div class="achievement">
+      🚀 Create Useful Applications
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TIMER -->
+<section id="timer" class="page">
+
+  <div class="card center">
+
+    <h2>⏱️ Study Timer</h2>
+
+    <div class="timer" id="timerDisplay">
+      25:00
+    </div>
+
+    <button onclick="startTimer()">▶ Start</button>
+
+    <button class="secondary" onclick="pauseTimer()">
+      ⏸ Pause
     </button>
 
-    <button class="nav-btn" onclick="showPage('quiz')">
-      <span class="icon">📝</span>
-      Quiz
+    <button class="danger" onclick="resetTimer()">
+      ↻ Reset
     </button>
 
-    <button class="nav-btn" onclick="showPage('goals')">
-      <span class="icon">🎯</span>
-      Goals
+  </div>
+
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="page">
+
+  <div class="card">
+
+    <h2>👤 Profile</h2>
+
+    <input
+      type="text"
+      id="profileName"
+      placeholder="Enter your name"
+    >
+
+    <button onclick="saveName()">
+      Save Name
     </button>
 
-    <button class="nav-btn" onclick="showPage('profile')">
-      <span class="icon">👤</span>
-      Profile
+    <h3 id="welcomeName"></h3>
+
+  </div>
+
+  <div class="card">
+
+    <h3>🏆 My Achievement</h3>
+
+    <div class="achievement">
+      🌟 Future Software Engineer
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+
+  <div class="card">
+
+    <h2>⚙️ Settings</h2>
+
+    <button onclick="toggleTheme()">
+      🌙 / ☀️ Dark & Light
     </button>
 
-    <button class="nav-btn" onclick="showPage('settings')">
-      <span class="icon">⚙️</span>
-      Settings
+    <button class="danger" onclick="resetProgress()">
+      🗑️ Reset Progress
     </button>
 
-  </nav>
+  </div>
 
-  <script>
+</section>
+
+  </main>  <!-- BOTTOM NAVIGATION -->  <nav class="bottom-nav"><button
+  class="nav-btn active"
+  onclick="showPage('home')">
+
+  <span class="icon">🏠</span>
+  Home
+
+</button>
+
+<button
+  class="nav-btn"
+  onclick="showPage('learn')">
+
+  <span class="icon">📚</span>
+  Learn
+
+</button>
+
+<button
+  class="nav-btn"
+  onclick="showPage('quiz')">
+
+  <span class="icon">📝</span>
+  Quiz
+
+</button>
+
+<button
+  class="nav-btn"
+  onclick="showPage('goals')">
+
+  <span class="icon">🎯</span>
+  Goals
+
+</button>
+
+<button
+  class="nav-btn"
+  onclick="showPage('profile')">
+
+  <span class="icon">👤</span>
+  Profile
+
+</button>
+
+<button
+  class="nav-btn"
+  onclick="showPage('settings')">
+
+  <span class="icon">⚙️</span>
+  Settings
+
+</button>
+
+  </nav>  <!-- JAVASCRIPT -->  <script>
 
     /* PAGE NAVIGATION */
+
     function showPage(pageId) {
 
-      const pages = document.querySelectorAll(".page");
+      const pages =
+        document.querySelectorAll(".page");
 
       pages.forEach(function(page) {
         page.classList.remove("active");
       });
 
-      const selectedPage = document.getElementById(pageId);
+      const selectedPage =
+        document.getElementById(pageId);
 
       if (selectedPage) {
         selectedPage.classList.add("active");
       }
 
-      const navButtons = document.querySelectorAll(".nav-btn");
+      const navButtons =
+        document.querySelectorAll(".nav-btn");
 
       navButtons.forEach(function(button) {
         button.classList.remove("active");
@@ -636,7 +667,10 @@ body {
 
 
     /* PROGRESS */
-    let progress = Number(localStorage.getItem("progress")) || 0;
+
+    let progress =
+      Number(localStorage.getItem("progress")) || 0;
+
 
     function updateProgress() {
 
@@ -650,14 +684,21 @@ body {
       document.getElementById("progressText").innerText =
         progress + "% completed";
 
-      localStorage.setItem("progress", progress);
+      localStorage.setItem(
+        "progress",
+        progress
+      );
     }
+
 
     function completeLesson(lesson) {
 
       if (!localStorage.getItem(lesson)) {
 
-        localStorage.setItem(lesson, "completed");
+        localStorage.setItem(
+          lesson,
+          "completed"
+        );
 
         progress += 10;
 
@@ -668,21 +709,29 @@ body {
         updateProgress();
 
         alert("🎉 Lesson completed!");
-      }
-      else {
-        alert("✅ You already completed this lesson.");
+
+      } else {
+
+        alert(
+          "✅ You already completed this lesson."
+        );
       }
     }
 
 
     /* DAILY GOALS */
+
     function completeGoal(number) {
 
-      const key = "goal" + number;
+      const key =
+        "goal" + number;
 
       if (!localStorage.getItem(key)) {
 
-        localStorage.setItem(key, "done");
+        localStorage.setItem(
+          key,
+          "done"
+        );
 
         progress += 5;
 
@@ -693,25 +742,31 @@ body {
         updateProgress();
 
         alert("🎯 Goal completed!");
-      }
-      else {
-        alert("✅ This goal is already completed.");
+
+      } else {
+
+        alert(
+          "✅ This goal is already completed."
+        );
       }
     }
 
 
     /* QUIZ */
+
     function checkQuiz() {
 
       let score = 0;
 
-      const q1 = document.querySelector(
-        'input[name="q1"]:checked'
-      );
+      const q1 =
+        document.querySelector(
+          'input[name="q1"]:checked'
+        );
 
-      const q2 = document.querySelector(
-        'input[name="q2"]:checked'
-      );
+      const q2 =
+        document.querySelector(
+          'input[name="q2"]:checked'
+        );
 
       if (q1 && q1.value === "a") {
         score++;
@@ -721,8 +776,12 @@ body {
         score++;
       }
 
-      document.getElementById("quizResult").innerText =
-        "🎉 Your score: " + score + "/2";
+      document.getElementById(
+        "quizResult"
+      ).innerText =
+        "🎉 Your score: " +
+        score +
+        "/2";
 
       if (score === 2) {
 
@@ -738,8 +797,11 @@ body {
 
 
     /* TIMER */
+
     let timeLeft = 25 * 60;
+
     let timerInterval = null;
+
 
     function updateTimerDisplay() {
 
@@ -749,11 +811,14 @@ body {
       const seconds =
         timeLeft % 60;
 
-      document.getElementById("timerDisplay").innerText =
+      document.getElementById(
+        "timerDisplay"
+      ).innerText =
         String(minutes).padStart(2, "0") +
         ":" +
         String(seconds).padStart(2, "0");
     }
+
 
     function startTimer() {
 
@@ -761,37 +826,47 @@ body {
         return;
       }
 
-      timerInterval = setInterval(function() {
+      timerInterval =
+        setInterval(function() {
 
-        if (timeLeft > 0) {
+          if (timeLeft > 0) {
 
-          timeLeft--;
+            timeLeft--;
 
-          updateTimerDisplay();
+            updateTimerDisplay();
 
-        }
-        else {
+          } else {
 
-          clearInterval(timerInterval);
+            clearInterval(
+              timerInterval
+            );
 
-          timerInterval = null;
+            timerInterval = null;
 
-          alert("🎉 Study time completed!");
-        }
+            alert(
+              "🎉 Study time completed!"
+            );
+          }
 
-      }, 1000);
+        }, 1000);
     }
+
 
     function pauseTimer() {
 
-      clearInterval(timerInterval);
+      clearInterval(
+        timerInterval
+      );
 
       timerInterval = null;
     }
 
+
     function resetTimer() {
 
-      clearInterval(timerInterval);
+      clearInterval(
+        timerInterval
+      );
 
       timerInterval = null;
 
@@ -802,47 +877,73 @@ body {
 
 
     /* PROFILE */
+
     function saveName() {
 
       const name =
-        document.getElementById("profileName").value.trim();
+        document
+          .getElementById("profileName")
+          .value
+          .trim();
 
       if (name === "") {
 
-        alert("Please enter your name.");
+        alert(
+          "Please enter your name."
+        );
 
         return;
       }
 
-      localStorage.setItem("userName", name);
+      localStorage.setItem(
+        "userName",
+        name
+      );
 
-      document.getElementById("welcomeName").innerText =
-        "Welcome, " + name + "! 👋";
+      document.getElementById(
+        "welcomeName"
+      ).innerText =
+        "Welcome, " +
+        name +
+        "! 👋";
     }
+
 
     function loadName() {
 
       const name =
-        localStorage.getItem("userName");
+        localStorage.getItem(
+          "userName"
+        );
 
       if (name) {
 
-        document.getElementById("profileName").value =
-          name;
+        document.getElementById(
+          "profileName"
+        ).value = name;
 
-        document.getElementById("welcomeName").innerText =
-          "Welcome, " + name + "! 👋";
+        document.getElementById(
+          "welcomeName"
+        ).innerText =
+          "Welcome, " +
+          name +
+          "! 👋";
       }
     }
 
 
     /* THEME */
+
     function toggleTheme() {
 
-      document.body.classList.toggle("light");
+      document.body.classList.toggle(
+        "light"
+      );
 
       const isLight =
-        document.body.classList.contains("light");
+        document.body.classList.contains(
+          "light"
+        );
 
       localStorage.setItem(
         "theme",
@@ -850,19 +951,25 @@ body {
       );
     }
 
+
     function loadTheme() {
 
       const theme =
-        localStorage.getItem("theme");
+        localStorage.getItem(
+          "theme"
+        );
 
       if (theme === "light") {
 
-        document.body.classList.add("light");
+        document.body.classList.add(
+          "light"
+        );
       }
     }
 
 
     /* RESET */
+
     function resetProgress() {
 
       const confirmReset =
@@ -880,19 +987,56 @@ body {
 
       updateProgress();
 
-      alert("Progress has been reset.");
+      alert(
+        "Progress has been reset."
+      );
 
       location.reload();
     }
 
 
     /* START */
+
     updateProgress();
+
     updateTimerDisplay();
+
     loadName();
+
     loadTheme();
 
-  </script>
 
-</body>
-              </html>
+    /* SERVICE WORKER */
+
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener(
+        "load",
+        function() {
+
+          navigator.serviceWorker
+            .register("./sw.js")
+
+            .then(function() {
+
+              console.log(
+                "Service Worker registered successfully."
+              );
+
+            })
+
+            .catch(function(error) {
+
+              console.error(
+                "Service Worker registration failed:",
+                error
+              );
+
+            });
+
+        }
+      );
+    }
+
+  </script></body>
+  </html>
