@@ -77,7 +77,15 @@
     }
 
     button {
-      border: none;
+      border: none;<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then(() => console.log("Service Worker registered"))
+        .catch((error) => console.error("Service Worker error:", error));
+    });
+  }
+</script>
       border-radius: 10px;
       padding: 11px 15px;
       background: #1565c0;
