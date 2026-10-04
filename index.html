@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CH Goal Academy</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#1565c0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1020;
+      color: white;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1565c0, #512da8);
+      padding: 25px 18px;
+      border-radius: 0 0 25px 25px;
+    }
+
+    header h1 {
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 18px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .card {
+      background: #151c32;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    .card h2,
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .subject {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #202941;
+      padding: 13px;
+      border-radius: 12px;
+      margin: 8px 0;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 15px;
+      background: #1565c0;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 4px;
+    }
+
+    .success {
+      background: #16803c;
+    }
+
+    .danger {
+      background: #d32f2f;
+    }
+
+    .secondary {
+      background: #30394f;
+    }
+
+    .progress {
+      height: 12px;
+      background: #30394f;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00c6ff, #7c4dff);
+    }
+
+    .lesson {
+      line-height: 1.7;
+    }
+
+    code {
+      display: block;
+      background: #050812;
+      color: #65d8ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .quiz-question {
+      margin-bottom: 20px;
+    }
+
+    .quiz-question label {
+      display: block;
+      background: #202941;
+      padding: 11px;
+      margin: 6px 0;
+      border-radius: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      border: 1px solid #56627a;
+      background: transparent;
+      color: white;
+      margin: 7px 0;
+    }
+
+    .timer {
+      text-align: center;
+      font-size: 45px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .achievement {
+      background: #202941;
+      padding: 14px;
+      border-radius: 12px;
+      margin: 8px 0;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: #11182b;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 100;
+      border-top: 1px solid #29334d;
+    }
+
+    .nav-btn {
+      background: transparent;
+      color: #9da8c0;
+      margin: 0;
+      padding: 5px;
+      font-size: 10px;
+    }
+
+    .nav-btn.active {
+      color: #42a5f5;
+    }
+
+    .icon {
+      display: block;
+      font-size: 19px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1565
